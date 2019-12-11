@@ -1,0 +1,4 @@
+val trips = spark.read.format("csv").option("header","true").option("inferSchema", "true").load("data.csv")
+trips.createOrReplaceTempView("trips")
+spark.sql("select distinct Client from trips").distinct().show()
+spark.sql("select  `Client Review`, count(`Client Review`) as `Client Review Occurrence` from trips group by `Client Review` order by `Client Review Occurrence` desc limit 10 ").show()

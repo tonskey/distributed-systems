@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+postcodes.csv_
+derby.log
+metastore_db
+data.csv
+node_modules
